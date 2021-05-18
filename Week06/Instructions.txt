@@ -1,0 +1,34 @@
+Kids Hack Labs
+Spring 2021 term
+Week 06
+
+Activity: Creating the Scene class
+
+Task: Implement a simple scene class.
+
+Specifications: 
+The game's engine expects the Scene to be a custom data type with a few
+specific attributes and methods.
+
+NOTE: Attributes should be created in the class's initializer!
+
+Attributes:
+    - started: This attribute tells the game whether the Scene was initialized
+               successfully. Its data type is boolean
+Methods:
+    - start(): For now, this method checks whether the class variables were
+               initialized correctly, and returns the current initialization
+               state of the Scene.
+    - update(): This method takes one argument (delta) and is responsible for
+                the scene's updates. For now, it should be an empty-bodied
+                method
+    - render(): This method takes one argument (target) and is responsible for
+                drawing the Scene on the game's screen (target).
+
+Once these attributes and methods are implmemented, create another attribute 
+named colour and assign it a tuple with three elements. These elements should
+be integers in the range 0 - 255.
+
+In the render method, fill the target with the Scene's colour.
+
+Run your code to test it.
