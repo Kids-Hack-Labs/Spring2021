@@ -6,6 +6,9 @@ Activity: Creating the Scene class
 
 Task: Implement a simple scene class.
 
+Note: Navigate to the "src" folder and open the scene.py file. This is where
+      you will be coding this week
+
 Specifications: 
 The game's engine expects the Scene to be a custom data type with a few
 specific attributes and methods.
@@ -14,11 +17,13 @@ NOTE: Attributes should be created in the class's initializer!
 
 Attributes:
     - started: This attribute tells the game whether the Scene was initialized
-               successfully. Its data type is boolean
+               successfully. Its data type is boolean, and it should be
+               initialized to False.
 Methods:
-    - start(): For now, this method checks whether the class variables were
-               initialized correctly, and returns the current initialization
-               state of the Scene.
+    - start(): This method checks whether the class variables were properly
+               initialized, and returns the current initialization state of 
+               the Scene. For now, all we do is set started to True and 
+               return it.
     - update(): This method takes one argument (delta) and is responsible for
                 the scene's updates. For now, it should be an empty-bodied
                 method
