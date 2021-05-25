@@ -1,0 +1,54 @@
+Kids Hack Labs
+Spring 2021 term
+Week 07
+
+Activity: Creating the Playable area
+
+Task: Implement the playable area checkerboard.
+
+Note: Navigate to the "src" folder and open the scene.py file. This is where
+      you will be coding this week
+
+Specifications: 
+This code uses last week's work as a basis. No new methods will be created 
+today.
+
+At the very beginning of your scene.py file:
+Import pygame's Color, Rect and Surface classes
+
+Inside the Scene's initializer:
+Create four attributes to store the playable area's info:
+area_info should be a tuple with four numbers: 0, 0, 450, and 450
+cell_amt should be an integer set to 18
+back_colour and cell_colour should be Color-type variables of your choosing.
+RECOMMENDED: Choose neutral colours, as these will be displayed in the
+background.
+
+Create three other attributes to store the playable area proper:
+cell_size should be a tuple with the width of the playable area divided by the
+amount of cells and the height of the playable area divided by the amount of
+cells
+The play_rect attribute should be a Rect-type variable created with data from
+the area_info attribute
+The play_surf attribute should be a Surface-type variable created with data
+from the size of the play_rect attribute
+
+Fill the play_surf surface with the back_colour attribute
+
+To draw the checkerboard, create a local import of the rect function from the
+pygame.draw submodule
+for a counter in the range of cell_amt:
+    for another counter in the range of cell_amt:
+        if either the first or the second counter is divisible by 2 
+        (but  not both) => Investigate how to use the ^ (exclusive or)
+        operator:
+            Draw a rectangle on the play_surf attribute with the cell_colour
+            attribute. Position it by creating a Rect-type variable with two
+            tuples: The first should multiply each counter by a member of the
+            cell_size attribute, and the second is simply the cell_size itself
+
+In the render method, after filling the target with the selected render 
+colour, blit the playable area on the target. Remember to position it
+using the playable rect.
+
+Run your code to test it.
