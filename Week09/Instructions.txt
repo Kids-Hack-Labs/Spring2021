@@ -1,0 +1,89 @@
+Kids Hack Labs
+Spring 2021 term
+Week 09
+
+Activity: Creating the Collectible class
+
+Task: Implement the collectible.
+
+Note: Navigate to the "src" folder and open the collectible.py file. This is 
+      where you will be coding this week
+
+Specifications: 
+
+At the very beginning of your collectible.py file:
+import the randrange function from the random module
+import Surface and Color from pygame.
+
+Create the Collectible class
+
+    Create the Collectible's initializer. It should take size and max_cells as
+        arguments (aside from self)
+    
+    Create the Collectible's start() method. It should only take self as an
+        argument
+    
+    Create the Collectible's update() method. It should take delta as an
+        argument aside from self
+        
+    Create the Collectible's render() method. It should take target as an
+        argument aside from self
+        
+    Create the Collectible's reposition() method. It should only take self as
+        an argument
+    
+    Create the Collectible's get_current_cell() mehtod. It should only take
+        self as an argument
+    
+    In the Collectible's initializer
+        Declare a started attribute and set it to False
+        Declare a max_cells attribute and set it to the max_cells argument
+        Declare a current_cell argument and set it to a tuple with two 
+            elements. These elements should be set to zero.
+        Declare a surf attribute and set it to a Surface-type variable that 
+            takes the size argument in its initializer
+        Declare a rect attribute and assign it the result of a call to the 
+            surf attribute's get_rect() method
+
+        Create a *temporary* variable named colorkey, set it to pure green
+        Create a *temporary* variable named fruit_colour, set it to a reddish
+            colour (Suggestion: cherry-> (217, 14, 24))
+        Fill the surf attribute with the colorkey
+        
+        Import the circle function from pygame's draw submodule
+        Call the circle function. 
+            The arguments should be: -the surf attribute
+                                     -the fruit colour
+                                     -the rect attribute's centre
+                                     -half the rect attribute's width minus 1
+        Set the surf attribute's colorkey to the colorkey variable
+        
+        Call the Collectible's reposition() method
+        
+    In the Collectible's start() method
+        Set the started attribute to the result of checking if the surf
+            attribute is a valid Surface (is not None) AND if it has its
+            colorkey set (hint: use surf's get_colorkey() method)
+        Return the started attribute
+    
+    In the Collectible's update() method
+        Pass the function (it should do nothing)
+    
+    In the Collectible's render() method
+        Blit the surf attribute to target, using the rect attribute as the
+            destination argument
+        ***NOTE: CHECK THE SCENE.PY FILE TO SEE HOW A PROPER BLIT IS MADE***
+    
+    In the Collectible's reposition() method
+        Set the current_cell attribute to a tuple with two elements. Both 
+            elements must be random integers between zero and the maximum 
+            number of cells
+            ***HINT: check the imports at the beginning of the file to know
+                     what function to use***
+        Set the rect attribute's left to the first element of the 
+            current_cell attribute multiplied by the rect's own width
+        Set the rect attribute's top  to the first element of the
+            current_cell attribute multiplied by the rect's own height
+    
+    In the Collectible's get_current_cell() method
+        return the current_cell attribute
