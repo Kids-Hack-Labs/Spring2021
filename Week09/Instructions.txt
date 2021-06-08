@@ -87,3 +87,23 @@ Create the Collectible class
     
     In the Collectible's get_current_cell() method
         return the current_cell attribute
+        
+Open the scene.py file. Leave the collectible.py file open
+
+In the beginning of the scene.py file, import the Collectible class from the
+    collectible module
+    
+    In the Scene's initializer:
+        Initialize a new fruit attribute, set it to a Collectible-type 
+            variable
+    
+    In the Scene's start() method:
+        Call the start() method of the fruit attribute
+    
+    In the Scene's update() method:
+        Call the update() method of the fruit attribute. Do not forget to pass
+            delta as an argument
+    
+    In the Scene's render() mehtod:
+        Calll the render() method of the fruit attribute. Do not forget to
+            pass target as an argument
