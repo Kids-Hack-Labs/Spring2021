@@ -38,7 +38,7 @@ Create the Collectible class
     In the Collectible's initializer
         Declare a started attribute and set it to False
         Declare a max_cells attribute and set it to the max_cells argument
-        Declare a current_cell argument and set it to a tuple with two 
+        Declare a current_cell attribute and set it to a tuple with two 
             elements. These elements should be set to zero.
         Declare a surf attribute and set it to a Surface-type variable that 
             takes the size argument in its initializer

@@ -1,4 +1,5 @@
 from pygame import Color, Rect, Surface
+
 from src.collectible import Collectible
 
 class Scene():
@@ -24,15 +25,16 @@ class Scene():
                          Rect((x*self.cell_size[0],
                                y*self.cell_size[1]),
                               self.cell_size))
-
         self.fruit = Collectible(self.cell_size, self.cell_amt)
 
     def start(self):
         self.started = True
+        self.fruit.start()
         return self.started
 
     def update(self, delta):
-        pass
+        self.fruit.update(delta)
 
     def render(self, target):
         target.blit(self.play_surf, self.play_rect)
+        self.fruit.render(target)

@@ -1,0 +1,46 @@
+Kids Hack Labs
+Spring 2021 term
+Week 10
+
+Activity: Integrating the Snake class with the game
+
+Task: Integrate the Snake.
+
+Note: Navigate to the "src" folder and open the scene.py file. This is 
+      where you will be coding this week
+
+Specifications: 
+
+At the very beginning of your scene.py file:
+
+Import the Snake class from the snake module
+    
+    In the Scene's initializer:
+        Create a score attribute and set it to zero
+        
+        Initialize a new snake attribute, set it to a Snake-type 
+            variable. **Remember to provide it with the needed values!**
+    
+    In the Scene's start() method:
+        Call the start() method of the snake attribute
+    
+    In the Scene's update() method:
+        Call the update() method of the snake attribute. Do not forget to pass
+            delta as an argument
+    
+    In the Scene's render() mehtod:
+        Calll the render() method of the fruit attribute. Do not forget to
+            pass target as an argument
+            
+    Create a method called collect(). It should take no arguments apart from 
+        self
+        
+        If the collectible attribute's cell is in the same spot as the 
+            attribute snake's head:
+            
+            Call the snake attribute's set_growth() method.
+            
+            While the collectible attribute's current cell is in the snake:
+                call the collectible attribute's reposition() method
+            
+            Increase the score attribute by 1
