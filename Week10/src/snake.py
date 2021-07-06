@@ -11,11 +11,11 @@ class Directions(Enum):
     WEST  = (-1, 0)
 
 class Snake():
-    def __init__(self, size, play_area, wraparound = True):
+    def __init__(self, size, num_cells, wraparound = True):
         self.started = False
         #Basic setup
         self.part_size = size #tuple
-        self.play_area = play_area #int
+        self.num_cells = num_cells #int
         self.wrap = wraparound
 
         #Graphics setup
@@ -28,8 +28,8 @@ class Snake():
         
         #Positions setup
         self.coords = []
-        self.coords.append([play_area//2, play_area//2])
-        self.coords.append((-1+play_area//2, play_area//2))
+        self.coords.append([num_cells//2, num_cells//2])
+        self.coords.append((-1+num_cells//2, num_cells//2))
 
         #Movement setup
             #Time variables (in ms)
@@ -120,13 +120,13 @@ class Snake():
         self.coords[0][1] += self.cur_direction[1]
 
         if self.wrap:
-            self.coords[0][0] %= self.play_area
-            self.coords[0][1] %= self.play_area
+            self.coords[0][0] %= self.num_cells
+            self.coords[0][1] %= self.num_cells
 
     def check_alive(self):
         #The first four conditions are always True if self.wrap is True
-        return self.coords[0][0] >= 0 and self.coords[0][0]<self.play_area and\
-               self.coords[0][1] >= 0 and self.coords[0][1]<self.play_area and\
+        return self.coords[0][0] >= 0 and self.coords[0][0]<self.num_cells and\
+               self.coords[0][1] >= 0 and self.coords[0][1]<self.num_cells and\
                (tuple(self.coords[0]) not in self.coords[1::])
 
     def get_head(self):
